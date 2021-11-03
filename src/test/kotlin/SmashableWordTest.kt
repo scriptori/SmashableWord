@@ -12,7 +12,8 @@ class SmashableWordTest {
             assertFalse(it.isSmashable("&*0"))
             assertTrue(it.isWord("PAIN"))
             assertTrue(it.isSmashable("PAIN"))
-            assertFalse(it.isSmashable("PR"))
+            assertTrue(it.isWord("PRE"))
+            assertFalse(it.isSmashable("PRE"))
             assertContentEquals(
                 listOf("PAIN", "PAIT", "PANT", "PINT", "AINT"),
                 it.getPossibleWords("PAINT")
