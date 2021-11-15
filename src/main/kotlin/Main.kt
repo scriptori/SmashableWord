@@ -1,6 +1,13 @@
+/**
+ * Execute with gradle run --args='arg1 arg2'
+ */
 fun main(args: Array<String>) {
-    println("Hello World!")
+    val sw = SmashableWordImpl()
 
-    // Try adding program arguments at Run/Debug configuration
-    println("Program arguments: ${args.joinToString()}")
+    args.forEach {
+        println("Possible words for $it are ${sw.getPossibleWords(it).joinToString(
+            ", ", "[", "]"
+        )}")
+        println("$it is ${if(sw.isSmashable(it)) "" else "NOT "}smashable!\n")
+    }
 }
